@@ -82,3 +82,16 @@ router.post("/login", async (req, res) => {
     }
 });
 
+// GET /api/auth/me
+router.get("/me", auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select("email createdAt");
+        return res.json({ user });
+
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Server error." });
+    }
+});
+
+module.exports = router;
