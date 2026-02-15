@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 module.exports = function auth(req, res, next) {
     const header = req.headers.authorization;
 
-    if (!header || !header.startWith("Bearer ")) {
+    if (!header || !header.startsWith("Bearer ")) {
         return res.satus(401).json({ error: "Missing or invalid Authorization"});
     }
 
