@@ -15,10 +15,10 @@ connectDB();
 
 // routes
 app.use("/health", require("./routes/health"));
+app.use("/api/auth", require("./routes/auth"));
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-
