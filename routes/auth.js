@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
             return res.status(400).json({ error: "Password must be at least 8 characters."});
         }
 
-        const normalizedEmail = email.toLowerCase().tirm();
+        const normalizedEmail = email.toLowerCase().trim();
 
         const existing = await User.findOne({ email: normalizedEmail });
         if (existing) {
