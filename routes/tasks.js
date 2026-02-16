@@ -42,6 +42,17 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.get("/:id", async (req, res) => {
+    try {
+        const task = await Task.findOne({ _id: req.params.id, userId: req.user.id });
+        if (!task) return res.status(404).json({ error: "Task not found." });
+        return res.json({ task });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Server error."});
+    }
+});
+
 // PATCH /api/tasks/:id - update task
 router.patch("/:id", async (req, res) => {
     try {
