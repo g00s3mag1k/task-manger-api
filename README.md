@@ -14,13 +14,6 @@ Full-stack task manager with JWT auth (login)  + CRUD tasks.
 **Backend:** Node.js + Express
 **DB:** MongoDB
 
-## Screenshots
-### Dashboard
-![alt text](dash.png)
-
-### Login
-![alt text](image.png)
-
 ## Local Setup
 ### Backend
 ```bash
