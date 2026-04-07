@@ -26,6 +26,10 @@ const TaskSchema = new mongoose.Schema(
             default: "todo",
             index: true,
         },
+        dueDate: {
+            type: Date,
+            default: null,
+        },
 },
     { timestamps: true}
 );

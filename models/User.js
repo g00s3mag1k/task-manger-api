@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
         passwordHash: {
             type: String,
             required: true,
-            select: false, // don't return hash by defualt 
+            select: false, // don't return hash by default 
         },
     },
     { timestamps: true }
